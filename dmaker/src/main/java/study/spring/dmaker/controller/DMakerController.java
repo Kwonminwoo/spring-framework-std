@@ -18,9 +18,8 @@ public class DMakerController {
     private final DMakerService dMakerService;
 
     @PostMapping("/create-developer")
-    public List<String> createDeveloper(@Valid @RequestBody CreateDeveloper.Request request){
+    public CreateDeveloper.Response createDeveloper(@Valid @RequestBody CreateDeveloper.Request request){
         log.info("request : {}", request);
-        dMakerService.createDeveloper(request);
-        return List.of("Olaf");
+        return dMakerService.createDeveloper(request);
     }
 }
