@@ -1,4 +1,4 @@
-package com.std.springbootstd;
+package com.std.springstdspringver;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

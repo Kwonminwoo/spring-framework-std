@@ -1,11 +1,9 @@
-package com.std.springbootstd.logic;
+package com.std.springstdspringver.logic;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class JavaSortTest {
     @Test

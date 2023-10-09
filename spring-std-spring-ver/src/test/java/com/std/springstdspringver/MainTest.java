@@ -1,8 +1,6 @@
-package com.std.springbootstd;
+package com.std.springstdspringver;
 
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class MainTest {
 

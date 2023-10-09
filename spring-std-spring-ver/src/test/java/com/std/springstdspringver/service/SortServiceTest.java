@@ -1,12 +1,10 @@
-package com.std.springbootstd.service;
+package com.std.springstdspringver.service;
 
-import com.std.springbootstd.logic.JavaSort;
+import com.std.springstdspringver.logic.JavaSort;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class SortServiceTest {
 
