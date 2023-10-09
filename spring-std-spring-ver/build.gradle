@@ -22,7 +22,8 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework:spring-context:5.3.8'
+	compileOnly 'javax.servlet:javax.servlet-api:4.0.1'
+	implementation 'org.springframework:spring-webmvc:5.3.8'
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework:spring-test:5.3.8'
