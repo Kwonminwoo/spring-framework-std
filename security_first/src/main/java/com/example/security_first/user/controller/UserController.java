@@ -6,6 +6,7 @@ import com.example.security_first.user.service.UserService;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -21,7 +22,9 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestBody UserLoginRequest userLoginRequest) {
+    public ResponseEntity<String> login(@RequestBody UserLoginRequest userLoginRequest, Authentication authentication) {
+        String name = authentication.getName();
+
         String token = userService.login(userLoginRequest.getUserName(), userLoginRequest.getPassword());
         return ResponseEntity.ok().body(token);
     }

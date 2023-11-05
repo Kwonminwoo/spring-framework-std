@@ -9,6 +9,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Service;
 
 import javax.crypto.spec.SecretKeySpec;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 
@@ -31,5 +32,23 @@ public class TokenProvider {
                 .setExpiration(new Date(System.currentTimeMillis() + expireTimeMs))
                 .signWith(new SecretKeySpec(key.getBytes(), SignatureAlgorithm.HS256.getJcaName()))
                 .compact();
+    }
+
+    public boolean isExpired(String token) {
+        return Jwts.parserBuilder()
+                .setSigningKey(key.getBytes())
+                .build()
+                .parseClaimsJws(token)
+                .getBody()
+                .getExpiration().before(new Date());
+    }
+
+    public String getUserNameFrom(String token) {
+        return Jwts.parserBuilder()
+                .setSigningKey(key.getBytes())
+                .build()
+                .parseClaimsJws(token)
+                .getBody()
+                .get("userName", String.class);
     }
 }
